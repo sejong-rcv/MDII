@@ -37,10 +37,4 @@ python feat_c.py --aef relu --checkpoints_dir ./checkpoints  --epoch epoch --gpu
   booktitle = {International Conference on Robotics and Automation(ICRA)},
   year = {2020}
 }
-@INPROCEEDINGS{IPIU2020,
-  author = {한대찬*, 황유진*, 김남일, 최유경},
-  title = {Multispectral Domain Invariant Image for Retrieval-based Place Recognition},
-  booktitle = {제32회 영상처리 및 이해에 관한 워크샵},
-  year = {2020}
-}
 ```
