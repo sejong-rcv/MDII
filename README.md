@@ -36,11 +36,12 @@ cd MDII
 - Option
   - visdom port number
    
-'''sh
+```sh
+
 nvidia-docker run -it -v $PWD:/workspace \
     -e NVIDIA_VISIBLE_DEVICES=all \
     handchan/mdii /bin/bash
-'''
+```
 ### Dataset
 
 - Download Dataset
