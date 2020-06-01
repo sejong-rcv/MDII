@@ -2,16 +2,7 @@
 
 # Multispectral Domain Invariant Image for Retrieval-based Place Recognition
 
-### Dataset
-- Pixel aligned Dataset
-  - [All-day Vision Dataset (CVPRW 2015)](https://sites.google.com/site/ykchoicv/multispectral_vprice)
-  - [All-day Vision Dataset (ITIS 2018)](https://ieeexplore.ieee.org/document/8293689)
-- Location aligned Dataset
   
-
-### Architecture
-<img src='https://user-images.githubusercontent.com/41140561/65418697-fb2b5780-de37-11e9-9bbd-71b0e2e84940.png'>
-
 ## Prerequisites
 - Linux or macOS
 - Python 3
@@ -51,6 +42,10 @@ cd MDII
 curl http://multispectral.sejong.ac.kr/ICRA2020_MDII/CVPRW_kaist_data.tar.gz -o CVPRW_kaist_data.tar.gz
 tar -xzvf CVPRW_kaist_data.tar.gz
 ```
+
+- we support the pre-processed dataset.If you want to check the original dataset, refer to the following papers.
+  - [All-day Vision Dataset (CVPRW 2015)](https://sites.google.com/site/ykchoicv/multispectral_vprice)
+  - [All-day Vision Dataset (ITIS 2018)](https://ieeexplore.ieee.org/document/8293689)
 
 ### Train
 
