@@ -31,6 +31,8 @@ cd MDII
 ```sh
 nvidia-docker run -it -v $PWD:/workspace -e NVIDIA_VISIBLE_DEVICES=all handchan/mdii /bin/bash
 ```
+> if you have any problem with downloading the docker image, check this repository : https://hub.docker.com/r/handchan/mdii/tags
+
 ### Dataset
 
 - Download Dataset
