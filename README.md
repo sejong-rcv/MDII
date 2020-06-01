@@ -29,10 +29,7 @@ cd MDII
   - visdom port number
    
 ```sh
-
-nvidia-docker run -it -v $PWD:/workspace \
-    -e NVIDIA_VISIBLE_DEVICES=all \
-    handchan/mdii /bin/bash
+nvidia-docker run -it -v $PWD:/workspace -e NVIDIA_VISIBLE_DEVICES=all handchan/mdii /bin/bash
 ```
 ### Dataset
 
