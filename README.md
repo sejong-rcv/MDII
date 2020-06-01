@@ -45,7 +45,7 @@ tar -xzvf CVPRW_kaist_data.tar.gz
 
 - we support the pre-processed dataset.If you want to check the original dataset, refer to the following papers.
   - [All-day Vision Dataset (CVPRW 2015)](https://sites.google.com/site/ykchoicv/multispectral_vprice)
-  - [All-day Vision Dataset (ITIS 2018)](https://ieeexplore.ieee.org/document/8293689)
+  - [All-day Vision Dataset (TITS 2018)](https://ieeexplore.ieee.org/document/8293689)
 
 ### Train
 
