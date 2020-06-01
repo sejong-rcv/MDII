@@ -2,6 +2,7 @@
 
 # Multispectral Domain Invariant Image for Retrieval-based Place Recognition
 
+MDII: [paper]('MDII_paper.pdf')
   
 ## Prerequisites
 - Linux or macOS
