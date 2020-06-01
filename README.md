@@ -67,7 +67,7 @@ python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_na
 
 ### Citation
 - [ICRA2020 Paper](./MDII_paper.pdf)
-- [ICRA2020 Presentation](https://www.slideshare.net/SejongRCV/multispectral-domain-invariant-image-for-retrievalbased-place-recognition)
+- [ICRA2020 Presentation](https://www.slideshare.net/SejongRCV/multispectral-domain-invariant-image-for-retrievalbased-place-recognition-234803884)
 
 ```
 @INPROCEEDINGS{ICRA2020,
