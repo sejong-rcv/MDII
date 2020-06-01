@@ -1,8 +1,9 @@
 <img src='https://user-images.githubusercontent.com/41140561/65418411-56a91580-de37-11e9-872d-a978e98364b1.png' align="right">
 
 # Multispectral Domain Invariant Image for Retrieval-based Place Recognition
+- [ICRA2020 Paper](./MDII_paper.pdf)
+- [ICRA2020 Presentation](https://www.slideshare.net/SejongRCV/multispectral-domain-invariant-image-for-retrievalbased-place-recognition-234803884)
 
-  
 ## Prerequisites
 - Linux or macOS
 - Python 3
@@ -66,8 +67,6 @@ python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_na
 ```
 
 ### Citation
-- [ICRA2020 Paper](./MDII_paper.pdf)
-- [ICRA2020 Presentation](https://www.slideshare.net/SejongRCV/multispectral-domain-invariant-image-for-retrievalbased-place-recognition-234803884)
 
 ```
 @INPROCEEDINGS{ICRA2020,
