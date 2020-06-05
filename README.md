@@ -29,7 +29,7 @@ cd MDII
   - visdom port number
    
 ```sh
-nvidia-docker run -it -v $PWD:/workspace -e NVIDIA_VISIBLE_DEVICES=all handchan/mdii /bin/bash
+nvidia-docker run -it -v $PWD:/workspace -p {port}:8888 -e NVIDIA_VISIBLE_DEVICES=all handchan/mdii /bin/bash
 ```
 > if you have any problem with downloading the docker image, check this repository : https://hub.docker.com/r/handchan/mdii/tags
 
@@ -60,9 +60,9 @@ python train.py --no_AA_BB --aef relu --gpu_ids GPU_NUM --name MDII --display_po
 
 ```sh
 ### Convert train img to MDII
-python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_name --dataroot path/to/data/CVPRW_kaist --no_dropout --model MDII_gan --phase train
+python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_name --dataroot path/to/data/CVPRW_kaist --no_dropout --model MDII_gan --phase train --eval
 ### Convert test img to MDII
-python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_name --dataroot path/to/dataCVPRW_kaist --no_dropout --model MDII_gan --phase test
+python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_name --dataroot path/to/dataCVPRW_kaist --no_dropout --model MDII_gan --phase test --eval
 ```
 
 ### Citation
