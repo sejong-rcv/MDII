@@ -65,6 +65,34 @@ python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_na
 python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_name --dataroot path/to/dataCVPRW_kaist --no_dropout --model MDII_gan --phase test --eval
 ```
 
+### Evaluation
+- Using Matlab vlfeat code. run rank.py
+  - Download [vleat](https://www.vlfeat.org/) (our version is vlfeat-0.9.21)
+  - Replace {vlfeat dir}/apps/recognition/ to [recognition_MDII](./recognition/)
+  - Place your convert result name as {vlfeat dir}/MDII
+    ```sh
+    cd {vlfeat dir}
+    ln -s {result dir} MDII (ex. ../../result/images/CVPRW_kaist/{checkpoint name}/{epoch}/)
+    # {vlfeat dir}
+    # ├── apps
+    # │   └── recognition
+    # ├── data
+    # │   ├── MDII -> ../../result/images/CVPRW_kaist/{checkpoint name}/{epoch}/
+    # │   │   ├── test
+    # │   │   │   ├── rgb
+    # │   │   │   ├── thr
+    # │   │   ├── train
+    # │   │   │   ├── rgb
+    # │   │   │   ├── thr
+    # ├──
+    # ...
+    ```
+   - Run the Matlab code {vlfeat dir}/apps/recognition/experiments.m
+   - Run the python code rank.py {workspace/rank.py}
+   ```sh
+   python rank.py --cache_path ./{vlfeat dir}/data_MDII_0604_200epoch/ex-MDII-vlad-aug
+   # You can see the detail in python rank.py --help
+   ```
 ### Citation
 
 ```
