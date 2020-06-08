@@ -25,7 +25,7 @@ class BaseOptions():
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
         # model parameters
-        parser.add_argument('--model', type=str, default='cycle_gan', help='chooses which model to use. [cycle_gan | pix2pix | test | colorization]')
+        parser.add_argument('--model', type=str, default='MDII_gan', help='chooses which model to use. [MDII_gan]')
         parser.add_argument('--input_nc', type=int, default=3, help='# of input image channels: 3 for RGB and 1 for grayscale')
         parser.add_argument('--output_nc', type=int, default=3, help='# of output image channels: 3 for RGB and 1 for grayscale')
         parser.add_argument('--ngf', type=int, default=64, help='# of gen filters in the last conv layer')
@@ -51,7 +51,7 @@ class BaseOptions():
         parser.add_argument('--downsample', type=int, default=0, help='downsample rate of Resnet')
         parser.add_argument('--toGray', action='store_true', help='if true, convert to the gray-type image')
         
-        parser.add_argument('--loss_type', type=str, default='E', help='loss combination [ E | ME | MF | ME+E | MF+E]') 
+        parser.add_argument('--loss_type', type=str, default='En+SF', help='loss combination [ E |En+SF| ME | MF | ME+E | MF+E]') 
         parser.add_argument('--mt_neg', type=int, default=100, help='minimum distance for negative sample')
         parser.add_argument('--mt_margin', type=float, default=1.0, help='margin for metric loss')
         parser.add_argument('--mt_p', type=int, default=2, help='p-norm for metric loss')
@@ -77,7 +77,7 @@ class BaseOptions():
         parser.add_argument('--load_iter', type=int, default='0', help='which iteration to load? if load_iter > 0, the code will load models by iter_[load_iter]  otherwise, the code will load models by [epoch]')
         parser.add_argument('--verbose', action='store_true', help='if specified, print more debugging information')
         parser.add_argument('--suffix', default='', type=str, help='customized suffix: opt.name = opt.name + suffix: e.g., {model}_{netG}_size{load_size}')
-        parser.add_argument('--dataset', default='CVPRW', type=str)
+        parser.add_argument('--dataset', default='ICRA', type=str)
         self.initialized = True
         return parser
 

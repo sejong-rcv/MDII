@@ -8,10 +8,6 @@ It first creates model, dataset, and visualizer given the option.
 It then does standard network training. During the training, it also visualize/save the images, print/save the loss plot, and save models.
 The script supports continue/resume training. Use '--continue_train' to resume your previous training.
 
-Example:
-    Train a MDII model:
-        python train.py --dataroot ./datasets/CVPRW_kaist --name Kaist_MDII --model MDII_gan --direction AtoB
-
 See options/base_options.py and options/train_options.py for more training options.
 """
 import time

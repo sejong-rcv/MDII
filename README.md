@@ -39,8 +39,8 @@ nvidia-docker run -it -v $PWD:/workspace -p {port}:8888 -e NVIDIA_VISIBLE_DEVICE
 
 ```sh
 cd MDII
-curl http://multispectral.sejong.ac.kr/ICRA2020_MDII/CVPRW_kaist_data.tar.gz -o CVPRW_kaist_data.tar.gz
-tar -xzvf CVPRW_kaist_data.tar.gz
+curl http://multispectral.sejong.ac.kr/ICRA2020_MDII/ICRA_MDII.tar.gz -o ICRA_MDII.tar.gz
+tar -xzvf ICRA_MDII.tar.gz
 ```
 
 - we support the pre-processed dataset.If you want to check the original dataset, refer to the following papers.
@@ -52,7 +52,7 @@ tar -xzvf CVPRW_kaist_data.tar.gz
 - Running train.py 
 
 ```sh
-python train.py --no_AA_BB --aef relu --gpu_ids GPU_NUM --name MDII --display_port 8888 --loss_type En+SF --dataroot ./CVPRW_kaist --gamma_identity 0 --no_dropout --model MDII_gan
+python train.py --name MDII --model MDII_gan --dataroot ./ICRA_MDII --gpu_ids GPU_NUM  --no_dropout --no_AA_BB
 ```
 
 ### Convert
@@ -60,9 +60,11 @@ python train.py --no_AA_BB --aef relu --gpu_ids GPU_NUM --name MDII --display_po
 
 ```sh
 ### Convert train img to MDII
-python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_name --dataroot path/to/data/CVPRW_kaist --no_dropout --model MDII_gan --phase train --eval
+python feat_c.py --epoch {Epoch} --gpu_ids {GPU_NUM} --name MDII \ 
+  --dataroot ./ICRA_MDII --no_dropout --model MDII_gan --phase train --eval
 ### Convert test img to MDII
-python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_name --dataroot path/to/dataCVPRW_kaist --no_dropout --model MDII_gan --phase test --eval
+python feat_c.py --epoch {Epoch} --gpu_ids {GPU_NUM} --name MDII \
+  --dataroot ./ICRA_MDII --no_dropout --model MDII_gan --phase test --eval
 ```
 
 ### Evaluation
@@ -72,12 +74,12 @@ python feat_c.py --aef relu --epoch Epoch --gpu_ids GPU_NUM --name checkpoint_na
   - Place your convert result name as {vlfeat dir}/MDII
     ```sh
     cd {vlfeat dir}
-    ln -s {result dir} MDII (ex. ../../result/images/CVPRW_kaist/{checkpoint name}/{epoch}/)
+    ln -s {result dir} MDII (ex. ../../result/images/ICRA_MDII/{checkpoint name}/{epoch}/)
     # {vlfeat dir}
     # ├── apps
     # │   └── recognition
     # ├── data
-    # │   ├── MDII -> ../../result/images/CVPRW_kaist/{checkpoint name}/{epoch}/
+    # │   ├── MDII -> ../../result/images/ICRA_MDII/{checkpoint name}/{epoch}/
     # │   │   ├── test
     # │   │   │   ├── rgb
     # │   │   │   ├── thr

@@ -23,8 +23,8 @@ class UnalignedDataset(BaseDataset):
             opt (Option class) -- stores all the experiment flags  needs to be a subclass of BaseOptions
         """
         BaseDataset.__init__(self, opt)
-        self.dir_A = os.path.join(opt.dataroot, opt.phase + 'A')  # create a path '/path/to/data/trainA' : RGB
-        self.dir_B = os.path.join(opt.dataroot, opt.phase + 'B')  # create a path '/path/to/data/trainB': Thermal
+        self.dir_A = os.path.join(opt.dataroot, opt.data_type + 'A')  # create a path '/path/to/data/trainA' : RGB
+        self.dir_B = os.path.join(opt.dataroot, opt.data_type + 'B')  # create a path '/path/to/data/trainB': Thermal
         self.A_paths = sorted(make_dataset(self.dir_A, opt.max_dataset_size))   # load images from '/path/to/data/trainA'
         self.B_paths = sorted(make_dataset(self.dir_B, opt.max_dataset_size))    # load images from '/path/to/data/trainB'
         self.A_size = len(self.A_paths)  # get the size of dataset A
@@ -35,7 +35,7 @@ class UnalignedDataset(BaseDataset):
         self.transform_A = get_transform(self.opt, grayscale=(input_nc == 1))
         self.transform_B = get_transform(self.opt, grayscale=(output_nc == 1))
         if 'M' in opt.loss_type:
-           if opt.phase=='train':
+           if opt.data_type=='train':
               gps_name = 'AM09_gps.txt' 
            else: 
               gps_name = 'AM05_gps.txt' 
