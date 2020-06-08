@@ -69,7 +69,7 @@ python feat_c.py --epoch {Epoch} --gpu_ids {GPU_NUM} --name MDII \
 
 ### Evaluation
 - Using Matlab vlfeat code. run rank.py
-  - Download [vleat](https://www.vlfeat.org/) (our version is vlfeat-0.9.21)
+  - Download [VLFeat](https://www.vlfeat.org/) (our version is vlfeat-0.9.21)
   - Replace {vlfeat dir}/apps/recognition/ to [recognition_MDII](./recognition/)
   - Place your convert result name as {vlfeat dir}/MDII
     ```sh
